@@ -5,7 +5,7 @@ const cors = require('cors')
 const bodyParser = require('body-parser')
 
 // Connecting with mongo db
-const mongodb = `mongodb+srv://somukarthik7660:ZlERPEOLNquRlqSX@somu.jupomrm.mongodb.net/crud_app?retryWrites=true&w=majority`;
+const mongodb = `mongodb+srv://somukarthik7660:ZlERPEOLNquRlqSX@somu.jupomrm.mongodb.net/crud_app`;
 mongoose
   // .connect('mongodb://127.0.0.1:27017/mydatabase')
   .connect(mongodb)
@@ -32,7 +32,7 @@ app.use('/', express.static(path.join(__dirname, 'dist/mean-stack-crud-app')))
 app.use('/api', employeeRoute)
 
 // Create port
-const port = process.env.PORT || 4000
+const port = process.env.PORT || 5000
 const server = app.listen(port, () => {
   console.log('Connected to port ' + port)
 })
