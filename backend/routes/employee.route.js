@@ -4,6 +4,18 @@ const employeeRoute = express.Router()
 
 // Employee model
 let Employee = require('../models/Employee')
+employeeRoute.route('/health').post((req, res, next) => {
+  res.json({
+    message:"server runninhg"
+  })
+  // Employee.create(req.body, (error, data) => {
+  //   if (error) {
+  //     return next(error)
+  //   } else {
+  //     res.json(data)
+  //   }
+  // })
+})
 
 // Add Employee
 employeeRoute.route('/create').post((req, res, next) => {
@@ -17,7 +29,7 @@ employeeRoute.route('/create').post((req, res, next) => {
 })
 
 // Get All Employees
-employeeRoute.route('/').get((req, res) => {
+employeeRoute.route('/list').get((req, res) => {
   Employee.find((error, data) => {
     if (error) {
       return next(error)

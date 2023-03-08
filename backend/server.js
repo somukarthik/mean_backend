@@ -7,8 +7,8 @@ const bodyParser = require('body-parser')
 // Connecting with mongo db
 const mongodb = `mongodb+srv://somukarthik7660:ZlERPEOLNquRlqSX@somu.jupomrm.mongodb.net/crud_app`;
 mongoose
-  // .connect('mongodb://127.0.0.1:27017/mydatabase')
-  .connect(mongodb)
+  .connect('mongodb://127.0.0.1:27017/mydatabase')
+  // .connect(mongodb)
   .then((x) => {
     console.log(`Connected to Mongo! Database name: "${x.connections[0].name}"`)
   })
@@ -27,8 +27,8 @@ app.use(
   }),
 )
 app.use(cors())
-app.use(express.static(path.join(__dirname, 'dist/mean-stack-crud-app')))
-app.use('/', express.static(path.join(__dirname, 'dist/mean-stack-crud-app')))
+// app.use(express.static(path.join(__dirname, 'dist/mean-stack-crud-app')))
+// app.use('/', express.static(path.join(__dirname, 'dist/mean-stack-crud-app')))
 app.use('/api', employeeRoute)
 
 // Create port
